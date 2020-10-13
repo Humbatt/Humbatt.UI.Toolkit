@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HumbattUIKitSample"
         xmlns:controls="http://wpf.humbatt.com/winfx/xaml/controls"
+        xmlns:editors="http://wpf.humbatt.com/winfx/xaml/editors"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <editors:DecimalTextBox />
+        <editors:MultiComboBox Height="20"/>
         <controls:FluidProgressBar />
         <controls:LoadingProgressView />
     </Grid>

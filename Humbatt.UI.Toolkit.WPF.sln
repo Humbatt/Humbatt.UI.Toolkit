@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{50E4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumbattUIKitSample", "HumbattUIKitSample\HumbattUIKitSample.csproj", "{89074AB2-36CA-4D56-9038-66833E60C1EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Humbatt.UI.Toolkit.WPF.Mvvm", "Humbatt.UI.Toolkit.WPF.Mvvm\Humbatt.UI.Toolkit.WPF.Mvvm.csproj", "{960CFC5C-F38E-43B3-BC80-3C7214E3F937}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{89074AB2-36CA-4D56-9038-66833E60C1EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89074AB2-36CA-4D56-9038-66833E60C1EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89074AB2-36CA-4D56-9038-66833E60C1EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{960CFC5C-F38E-43B3-BC80-3C7214E3F937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{960CFC5C-F38E-43B3-BC80-3C7214E3F937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{960CFC5C-F38E-43B3-BC80-3C7214E3F937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{960CFC5C-F38E-43B3-BC80-3C7214E3F937}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
