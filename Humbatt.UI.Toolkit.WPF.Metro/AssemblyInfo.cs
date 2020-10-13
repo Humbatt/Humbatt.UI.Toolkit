@@ -10,7 +10,4 @@ using System.Windows.Markup;
                                               // app, or any theme specific resource dictionaries)
 )]
 
-
-[assembly: XmlnsDefinition("http://wpf.humbatt.com/winfx/xaml/editors", "Humbatt.UI.Toolkit.WPF.Editors", AssemblyName = "Humbatt.UI.Toolkit.WPF")]
-[assembly: XmlnsDefinition("http://wpf.humbatt.com/winfx/xaml/converters", "Humbatt.UI.Toolkit.WPF.Converters", AssemblyName = "Humbatt.UI.Toolkit.WPF")]
-[assembly: XmlnsDefinition("http://wpf.humbatt.com/winfx/xaml/controls", "Humbatt.UI.Toolkit.WPF.Controls", AssemblyName = "Humbatt.UI.Toolkit.WPF")]
+[assembly: XmlnsDefinition("http://wpf.humbatt.com/winfx/xaml/controls", "Humbatt.UI.Toolkit.WPF.Controls", AssemblyName = "Humbatt.UI.Toolkit.WPF.Metro")]

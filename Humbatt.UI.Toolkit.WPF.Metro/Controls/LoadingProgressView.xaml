@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="Humbatt.UI.Toolkit.WPF.Controls.LoadingProgressView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+              d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Rectangle Fill="Gray" Opacity="0.3"/>
+        <Controls:ProgressRing x:Name="rngActive" IsActive="True" Width="150" Height="150" Foreground="{DynamicResource MahApps.Brushes.Accent}"/>
+        <TextBlock x:Name="txtLabel" Text="Loading.." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
+    </Grid>
+</UserControl>
