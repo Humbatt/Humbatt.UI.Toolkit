@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humbatt.UI.Toolkit.Core", "Humbatt.UI.Toolkit.Core\Humbatt.UI.Toolkit.Core.csproj", "{3B2B1721-6FB7-4924-BB80-C4C3BC17C376}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humbatt.UI.Toolkit.WPF", "Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj", "{1B01DA36-A39E-4C7F-B336-3D050DF89A0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B2B1721-6FB7-4924-BB80-C4C3BC17C376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B2B1721-6FB7-4924-BB80-C4C3BC17C376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B2B1721-6FB7-4924-BB80-C4C3BC17C376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B2B1721-6FB7-4924-BB80-C4C3BC17C376}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B01DA36-A39E-4C7F-B336-3D050DF89A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B01DA36-A39E-4C7F-B336-3D050DF89A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B01DA36-A39E-4C7F-B336-3D050DF89A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B01DA36-A39E-4C7F-B336-3D050DF89A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3E44960-EBF2-4BFB-8A4E-3B2175936506}
+	EndGlobalSection
+EndGlobal
