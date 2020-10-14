@@ -30,13 +30,11 @@ steps:
     vsVersion: '16.8.0'
     includePreviewVersions: true
 
-- task: NuGetToolInstaller@1
-  displayName: Install Latest Nuget
-  
-- task: NuGetCommand@2
-  displayName: Nuget Restore
+- task: DotNetCoreCLI@2
+  displayName: Restore packages
   inputs:
-    restoreSolution: '$(solution)'
+    command: 'restore'
+    projects: '**/*.csproj'
 
 - task: VSBuild@1
   displayName: Build Solution
