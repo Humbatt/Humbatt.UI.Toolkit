@@ -40,7 +40,7 @@ steps:
   inputs:
     command: 'build'
     projects: '**/*.csproj'
-    arguments: '-c $(buildConfiguration) /p:Platform=$(buildPlatform) -p:Version=$(Build.BuildNumber)$(ReleaseSuffix) -p:AssemblyVersion=$(Build.BuildNumber) -p:FileVersion=$(Build.BuildNumber)'
+    arguments: '-c $(buildConfiguration) -o $(build.artifactstagingdirectory) /p:Platform=$(buildPlatform) -p:Version=$(Build.BuildNumber)$(ReleaseSuffix) -p:AssemblyVersion=$(Build.BuildNumber) -p:FileVersion=$(Build.BuildNumber)'
     
 - task: CopyFiles@2
   displayName: Copy Files to $(build.artifactstagingdirectory)
