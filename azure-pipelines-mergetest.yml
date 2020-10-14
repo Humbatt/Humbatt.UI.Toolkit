@@ -35,6 +35,6 @@ steps:
     command: 'build'
     projects: 
       '$(solution)'
-    arguments: '-c $(buildConfiguration) /p:Platform="$(buildPlatform)"''
+    arguments: '-c $(buildConfiguration) /p:Platform="$(buildPlatform)"'
     
 
