@@ -39,7 +39,8 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/*.csproj'
+    projects: 
+      '$(solution)'
     arguments: '-c $(buildConfiguration) -o $(build.artifactstagingdirectory) /p:Platform=$(buildPlatform) -p:Version=$(Build.BuildNumber)$(ReleaseSuffix) -p:AssemblyVersion=$(Build.BuildNumber) -p:FileVersion=$(Build.BuildNumber)'
     
 - task: CopyFiles@2
