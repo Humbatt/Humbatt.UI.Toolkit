@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.0;net5.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Authors>humbatt newky2k</Authors>
     <Company>humbatt newky2k</Company>
-    <Description>Mvmm based controls and classess for Humbatt.UI.Toolkit.WPF</Description>
+    <Description>Mvmm based controls and classess for Humbatt.UI.Toolkit.WPF for .Net Core 3.x and Net 5+</Description>
     <PackageProjectUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <PackageTags>WPF Controls</PackageTags>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>Added support for .Net 5</PackageReleaseNotes>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>humbatt.snk</AssemblyOriginatorKeyFile>
     <Copyright>Copyright © 2020 Humbatt</Copyright>
