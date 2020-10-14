@@ -35,6 +35,6 @@ steps:
     command: 'build'
     projects: 
       '$(solution)'
-    arguments: '-c $(buildConfiguration) /p:Platform="$(buildPlatform)" -p:Version=$(Build.BuildNumber)$(ReleaseSuffix) -p:AssemblyVersion=$(Build.BuildNumber) -p:FileVersion=$(Build.BuildNumber)'
+    arguments: '-c $(buildConfiguration) /p:Platform="$(buildPlatform)"'
     
 
