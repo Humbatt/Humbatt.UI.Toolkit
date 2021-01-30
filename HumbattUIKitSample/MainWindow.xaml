@@ -4,14 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HumbattUIKitSample"
+         d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
         xmlns:controls="http://wpf.humbatt.com/winfx/xaml/controls"
         xmlns:editors="http://wpf.humbatt.com/winfx/xaml/editors"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Loaded="OnLoaded"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <editors:DecimalTextBox />
-        <editors:MultiComboBox Height="20"/>
-        <controls:FluidProgressBar />
-        <controls:LoadingProgressView />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <controls:SearchableListControl ItemsSource="{Binding Items}" SearchText="{Binding SearchText}" HeaderTitle="Name" DisplayMember="Name" ReloadCommand="{Binding RefreshCommand}" ShowAddButton="{Binding ShowAddButton}"/>
+        <Grid  Grid.Column="1">
+            <editors:DecimalTextBox />
+            <editors:MultiComboBox Height="20"/>
+            <controls:FluidProgressBar />
+            <controls:LoadingProgressView />
+        </Grid>
+
     </Grid>
 </Window>
