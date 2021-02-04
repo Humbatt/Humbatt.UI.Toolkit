@@ -8,13 +8,22 @@
         xmlns:controls="http://wpf.humbatt.com/winfx/xaml/controls"
         xmlns:editors="http://wpf.humbatt.com/winfx/xaml/editors"
         mc:Ignorable="d" Loaded="OnLoaded"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1024">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="360" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <controls:SearchableListControl ItemsSource="{Binding Items}" SearchText="{Binding SearchText}" HeaderTitle="Name" DisplayMember="Name" ReloadCommand="{Binding RefreshCommand}" ShowAddButton="{Binding ShowAddButton}"/>
+        <controls:SearchableListControl ItemsSource="{Binding Items}" 
+                                        SearchText="{Binding SearchText}" 
+                                        SearchLabel="Search:"
+                                        HeaderTitle="Name" 
+                                        DisplayMember="Name" 
+                                        SelectedItem="{Binding SelectedItem}"
+                                        ReloadCommand="{Binding RefreshCommand}" 
+                                        DoubleClickCommand="{Binding DoubleClickCommand}"
+                                        ShowAddButton="{Binding ShowAddButton}"
+                                        />
         <Grid  Grid.Column="1">
             <editors:DecimalTextBox />
             <editors:MultiComboBox Height="20"/>
@@ -24,3 +33,5 @@
 
     </Grid>
 </Window>
+
+    

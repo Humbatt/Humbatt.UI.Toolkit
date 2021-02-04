@@ -6,6 +6,7 @@ using System.Linq;
 using System.Mvvm;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace HumbattUIKitSample
 {
@@ -37,6 +38,39 @@ namespace HumbattUIKitSample
             get { return _showAddButton; }
             set { _showAddButton = value; NotifyPropertyChanged(nameof(ShowAddButton)); }
         }
+
+        private ItemModel _selectedItem;
+
+        public new ItemModel SelectedItem
+        {
+            get { return _selectedItem; }
+            set { _selectedItem = value; NotifyPropertyChanged(nameof(SelectedItem)); }
+        }
+
+
+
+        public ICommand DoubleClickCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    try
+                    {
+                        if (SelectedItem == null)
+                            throw new Exception("SelectedItem cannot be null");
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        NotifyErrorOccured(ex);
+                    }
+                });
+            }
+        }
+
 
 
         protected override ObservableCollection<ItemModel> ApplyFilter(ObservableCollection<ItemModel> data)

@@ -45,5 +45,6 @@ namespace HumbattUIKitSample
                 ViewModel.IsLoaded = true;
             }
         }
+
     }
 }

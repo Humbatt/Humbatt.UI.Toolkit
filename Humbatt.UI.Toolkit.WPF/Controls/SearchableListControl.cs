@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,8 +23,12 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
     [TemplatePart(Name = PartClearButton, Type = typeof(Button))]
     [TemplatePart(Name = PartReloadButton, Type = typeof(Button))]
     [TemplatePart(Name = PartAddButton, Type = typeof(Button))]
+    [TemplatePart(Name = PartItemCount, Type = typeof(TextBlock))]
     public class SearchableListControl : Control
     {
+        #region Constants
+
+
         public const string PartHeader = "PART_Header";
         public const string PartList = "PART_List";
         public const string PartFooter = "PART_Footer";
@@ -31,6 +36,10 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
         public const string PartClearButton = "PART_ClearButton";
         public const string PartReloadButton = "PART_ReloadButton";
         public const string PartAddButton = "PART_AddButton";
+        public const string PartItemCount = "PART_ItemCount";
+        #endregion
+
+        #region Fields
 
         StackPanel _header;
         DataGrid _list;
@@ -40,33 +49,31 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
         Button _clearButton;
         Button _addButton;
         Button _refreshButton;
+        TextBlock _itemCountLabel;
+        private bool _labelCountInternal;
 
-        public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register("ItemsSource", typeof(IEnumerable), typeof(SearchableListControl));
-        public static readonly DependencyProperty DisplayMemberProperty = DependencyProperty.Register("DisplayMember", typeof(string), typeof(SearchableListControl), new FrameworkPropertyMetadata(string.Empty));
-        public static readonly DependencyProperty HeaderTitleProperty = DependencyProperty.Register("HeaderTitle", typeof(string), typeof(SearchableListControl), new FrameworkPropertyMetadata(string.Empty));
+        #endregion
 
-        public static readonly DependencyProperty AddCommandProperty = DependencyProperty.Register(nameof(AddCommand), typeof(ICommand), typeof(SearchableListControl));
-        public static readonly DependencyProperty ReloadCommandProperty = DependencyProperty.Register(nameof(ReloadCommand), typeof(ICommand), typeof(SearchableListControl));
-
-        public static readonly DependencyProperty SearchTextProperty = DependencyProperty.Register(nameof(SearchText), typeof(string), typeof(SearchableListControl), new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
-        {
-            DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
-        });
-
-
-        public static readonly DependencyProperty FilterPanelProperty = DependencyProperty.Register(nameof(FilterPanel), typeof(FrameworkElement), typeof(SearchableListControl));
+        #region Add Button
 
         public static readonly DependencyProperty AddButtonContentProperty = DependencyProperty.Register(nameof(AddButtonContent), typeof(object), typeof(SearchableListControl), new FrameworkPropertyMetadata("Add"));
-        public static readonly DependencyProperty ReloadButtonContentProperty = DependencyProperty.Register(nameof(ReloadButtonContent), typeof(object), typeof(SearchableListControl), new FrameworkPropertyMetadata("Reload"));
-        public static readonly DependencyProperty ClearButtonContentProperty = DependencyProperty.Register(nameof(ClearButtonContent), typeof(object), typeof(SearchableListControl), new FrameworkPropertyMetadata("Clear"));
 
-        #region Show Add Button
+        public ICommand AddCommand
+        {
+            get { return (ICommand)GetValue(AddCommandProperty); }
+            set { SetValue(AddCommandProperty, value); }
+        }
+
+
+
+        public static readonly DependencyProperty AddCommandProperty = DependencyProperty.Register(nameof(AddCommand), typeof(ICommand), typeof(SearchableListControl));
 
         public static readonly DependencyProperty ShowAddButtonProperty = DependencyProperty.Register(nameof(ShowAddButton), typeof(bool), typeof(SearchableListControl), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnShowAddButtonChanged)
         {
             DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
 
         });
+
 
 
         public bool ShowAddButton
@@ -82,12 +89,23 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
             sh._addButton.Visibility = ((bool)e.NewValue) ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        #endregion
+        
 
         public object AddButtonContent
         {
             get { return GetValue(AddButtonContentProperty); }
             set { SetValue(AddButtonContentProperty, value); }
+        }
+
+        #endregion
+
+        #region Reload Button
+        public static readonly DependencyProperty ReloadButtonContentProperty = DependencyProperty.Register(nameof(ReloadButtonContent), typeof(object), typeof(SearchableListControl), new FrameworkPropertyMetadata("Reload"));
+
+        public ICommand ReloadCommand
+        {
+            get { return (ICommand)GetValue(ReloadCommandProperty); }
+            set { SetValue(ReloadCommandProperty, value); }
         }
 
         public object ReloadButtonContent
@@ -96,23 +114,90 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
             set { SetValue(ReloadButtonContentProperty, value); }
         }
 
+        public static readonly DependencyProperty ReloadCommandProperty = DependencyProperty.Register(nameof(ReloadCommand), typeof(ICommand), typeof(SearchableListControl));
+
+        #endregion
+
+        #region Clear Button
+
+        public static readonly DependencyProperty ClearButtonContentProperty = DependencyProperty.Register(nameof(ClearButtonContent), typeof(object), typeof(SearchableListControl), new FrameworkPropertyMetadata("Clear"));
+
         public object ClearButtonContent
         {
             get { return GetValue(ClearButtonContentProperty); }
             set { SetValue(ClearButtonContentProperty, value); }
         }
 
-
-        public ICommand AddCommand
+        private void OnClearClicked(object sender, RoutedEventArgs e)
         {
-            get { return (ICommand)GetValue(AddCommandProperty); }
-            set { SetValue(AddCommandProperty, value); }
+            SearchText = null;
+        }
+        #endregion
+
+        #region Double click
+
+        public event EventHandler<object> OnDoubleClickItem = delegate { };
+
+        public static readonly DependencyProperty DoubleClickCommandProperty = DependencyProperty.Register(nameof(DoubleClickCommand), typeof(ICommand), typeof(SearchableListControl));
+
+        public ICommand DoubleClickCommand
+        {
+            get { return (ICommand)GetValue(DoubleClickCommandProperty); }
+            set { SetValue(DoubleClickCommandProperty, value); }
         }
 
-        public ICommand ReloadCommand
+        #endregion
+
+        #region Items
+
+
+        public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register("ItemsSource", typeof(IEnumerable), typeof(SearchableListControl), new FrameworkPropertyMetadata(null, OnItemsSourceChanged));
+        public static readonly DependencyProperty ItemCountTextProperty = DependencyProperty.Register(nameof(ItemCountText), typeof(object), typeof(SearchableListControl), new FrameworkPropertyMetadata(null)
         {
-            get { return (ICommand)GetValue(ReloadCommandProperty); }
-            set { SetValue(ReloadCommandProperty, value); }
+            DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+        });
+
+        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(nameof(SelectedItem), typeof(object), typeof(SearchableListControl), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
+        {
+            DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+        });
+
+        private static void OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var sh = (SearchableListControl)d;
+
+            var items = ((IEnumerable)e.NewValue);
+
+            bool ifItemCountSet = sh.ReadLocalValue(ItemCountTextProperty) != DependencyProperty.UnsetValue;
+
+            if (!ifItemCountSet)
+            {
+                sh._labelCountInternal = true;
+
+                sh._itemCountLabel.Text = $"Found {items.Cast<object>().Count()} item(s)";
+            }
+            else if (sh._labelCountInternal == true)
+            {
+                sh._itemCountLabel.Text = $"Found {items.Cast<object>().Count()} item(s)";
+            }
+            //if (string.IsNullOrWhiteSpace(sh.ItemCountText))
+            //    
+
+            //sh._addButton.Visibility = ((bool)e.NewValue) ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public string ItemCountText
+        {
+            get { return (string)GetValue(ItemCountTextProperty); }
+
+            set { SetValue(ItemCountTextProperty, value); }
+        }
+
+        public object SelectedItem
+        {
+            get { return (object)GetValue(SelectedItemProperty); }
+
+            set { SetValue(SelectedItemProperty, value); }
         }
 
         public IEnumerable ItemsSource
@@ -120,6 +205,21 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
             get { return (IEnumerable)GetValue(ItemsSourceProperty); }
             set { SetValue(ItemsSourceProperty, value); }
         }
+
+        #endregion
+
+        #region Search
+
+        public static readonly DependencyProperty DisplayMemberProperty = DependencyProperty.Register(nameof(DisplayMember), typeof(string), typeof(SearchableListControl), new FrameworkPropertyMetadata(string.Empty));
+        public static readonly DependencyProperty HeaderTitleProperty = DependencyProperty.Register(nameof(HeaderTitle), typeof(string), typeof(SearchableListControl), new FrameworkPropertyMetadata(string.Empty));
+        public static readonly DependencyProperty SearchLabelProperty = DependencyProperty.Register(nameof(SearchLabel), typeof(string), typeof(SearchableListControl), new FrameworkPropertyMetadata("Search"));
+
+        public static readonly DependencyProperty SearchTextProperty = DependencyProperty.Register(nameof(SearchText), typeof(string), typeof(SearchableListControl), new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
+        {
+            DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+        });
+
+        public static readonly DependencyProperty FilterPanelProperty = DependencyProperty.Register(nameof(FilterPanel), typeof(FrameworkElement), typeof(SearchableListControl));
 
         public FrameworkElement FilterPanel
         {
@@ -154,10 +254,27 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
             set { SetValue(HeaderTitleProperty, value); }
         }
 
+        public string SearchLabel
+        {
+            get { return (string)GetValue(SearchLabelProperty); }
+
+            set { SetValue(SearchLabelProperty, value); }
+        }
+
+        #endregion
+
+        #region Constructors
+
+
         static SearchableListControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SearchableListControl), new FrameworkPropertyMetadata(typeof(SearchableListControl)));
         }
+
+        #endregion
+
+        #region Internals
+
 
         public override void OnApplyTemplate()
         {
@@ -170,6 +287,7 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
             _clearButton = Template.FindName(PartClearButton, this) as Button;
             _addButton = Template.FindName(PartAddButton, this) as Button;
             _refreshButton = Template.FindName(PartClearButton, this) as Button;
+            _itemCountLabel = Template.FindName(PartItemCount, this) as TextBlock;
 
             var dispMember = DisplayMember;
 
@@ -205,7 +323,7 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
             {
                 Style rowStyle = new Style(typeof(DataGridRow), _list.RowStyle);
                 rowStyle.Setters.Add(new EventSetter(DataGridRow.MouseDoubleClickEvent,
-                                         new MouseButtonEventHandler(Row_DoubleClick)));
+                                         new MouseButtonEventHandler(OnRowDoubleClickl)));
 
 
                 _list.RowStyle = rowStyle;
@@ -221,20 +339,24 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
             }
         }
 
-        private void OnClearClicked(object sender, RoutedEventArgs e)
-        {
-            SearchText = null;
-        }
-
         private void OnTextChanged(object sender, TextChangedEventArgs e)
         {
             SearchText = _searcghField.Text;
         }
 
-        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        private void OnRowDoubleClickl(object sender, MouseButtonEventArgs e)
         {
             DataGridRow row = sender as DataGridRow;
+
+            OnDoubleClickItem?.Invoke(this, row.Item);
             // Some operations with this row
+
+            if (DoubleClickCommand != null && DoubleClickCommand.CanExecute(row.Item))
+            {
+                DoubleClickCommand.Execute(row.Item);
+            }
         }
+
+        #endregion
     }
 }

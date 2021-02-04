@@ -20,15 +20,15 @@
                             </Grid.RowDefinitions>
 
                             <StackPanel x:Name="PART_Header" Grid.Row="0" Orientation="Horizontal" Margin="0,2,0,2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock VerticalAlignment="Center">Search</TextBlock>
+                                <TextBlock VerticalAlignment="Center" Text="{TemplateBinding SearchLabel}"/>
                                 <TextBox x:Name="PART_SearchField" Width="150" Margin="2,2,2,2" Text="{Binding Path=SearchText, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}"></TextBox>
-                                <Button x:Name="PART_ClearButton" Height="20" FontSize="10">
+                                <Button x:Name="PART_ClearButton">
                                     <ContentPresenter ContentSource="ClearButtonContent" />
                                 </Button>
-                                <Button  x:Name="PART_ReloadButton" Height="20" FontSize="10" Command="{TemplateBinding ReloadCommand}">
+                                <Button  x:Name="PART_ReloadButton" Command="{TemplateBinding ReloadCommand}">
                                     <ContentPresenter ContentSource="ReloadButtonContent" />
                                 </Button>
-                                <Button x:Name="PART_AddButton" Height="20" FontSize="10" Command="{TemplateBinding AddCommand}">
+                                <Button x:Name="PART_AddButton" Command="{TemplateBinding AddCommand}">
                                     <ContentPresenter ContentSource="AddButtonContent" />
                                 </Button>
                             </StackPanel>
@@ -39,7 +39,7 @@
                                               CanUserDeleteRows="False" 
                                               SelectionMode="Single" 
                                               SelectionUnit="FullRow"
-                                              SelectedItem="{Binding SelectedItem}"
+                                              SelectedItem="{Binding Path=SelectedItem, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}"
                                               GridLinesVisibility="None"
                                                CanUserResizeRows="False"
                                                CanUserSortColumns="False"
@@ -60,7 +60,7 @@
                                         <ContentPresenter ContentSource="FilterPanel" x:Name="PART_FilterPanel"/>
                                     </Grid>
                                     <Grid Grid.Row="1" Margin="0,5,0,5">
-                                        <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="SemiBold" Text="{Binding ItemCount, FallbackValue=Items}" Margin="0,0,5,0"></TextBlock>
+                                        <TextBlock x:Name="PART_ItemCount"  VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="SemiBold" Text="{Binding Path=ItemCountText, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" Margin="0,0,5,0" />
                                     </Grid>
                                 </Grid>
                             </Border>
