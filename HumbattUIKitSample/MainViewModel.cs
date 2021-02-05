@@ -6,6 +6,7 @@ using System.Linq;
 using System.Mvvm;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace HumbattUIKitSample
@@ -53,13 +54,14 @@ namespace HumbattUIKitSample
         {
             get
             {
-                return new DelegateCommand(() =>
+                return new DelegateCommand(async () =>
                 {
                     try
                     {
                         if (SelectedItem == null)
                             throw new Exception("SelectedItem cannot be null");
 
+                        MessageBox.Show($"Clicked {SelectedItem.Name}", "Double Clicked");
 
                     }
                     catch (Exception ex)

@@ -41,7 +41,7 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
 
         #region Fields
 
-        StackPanel _header;
+        Border _header;
         DataGrid _list;
         Border _footer;
         TextBox _searcghField;
@@ -150,6 +150,7 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
 
         #region Items
 
+        public event EventHandler<object> SelectionChanged = delegate { };
 
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register("ItemsSource", typeof(IEnumerable), typeof(SearchableListControl), new FrameworkPropertyMetadata(null, OnItemsSourceChanged));
         public static readonly DependencyProperty ItemCountTextProperty = DependencyProperty.Register(nameof(ItemCountText), typeof(object), typeof(SearchableListControl), new FrameworkPropertyMetadata(null)
@@ -273,6 +274,33 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
 
         #endregion
 
+        #region Style
+
+        public static readonly DependencyProperty HeaderBorderStyleProperty = DependencyProperty.Register(nameof(HeaderBorderStyle), typeof(Style), typeof(SearchableListControl));
+        public static readonly DependencyProperty FooterBorderStyleProperty = DependencyProperty.Register(nameof(FooterBorderStyle), typeof(Style), typeof(SearchableListControl));
+        public static readonly DependencyProperty ButtonStyleProperty = DependencyProperty.Register(nameof(ButtonStyle), typeof(Style), typeof(SearchableListControl));
+
+        public Style HeaderBorderStyle
+        {
+            get { return (Style)GetValue(HeaderBorderStyleProperty); }
+
+            set { SetValue(HeaderBorderStyleProperty, value); }
+        }
+
+        public Style FooterBorderStyle
+        {
+            get { return (Style)GetValue(FooterBorderStyleProperty); }
+
+            set { SetValue(FooterBorderStyleProperty, value); }
+        }
+
+        public Style ButtonStyle
+        {
+            get { return (Style)GetValue(ButtonStyleProperty); }
+
+            set { SetValue(ButtonStyleProperty, value); }
+        }
+        #endregion
         #region Internals
 
 
@@ -280,13 +308,13 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
         {
             base.OnApplyTemplate();
 
-            _header = Template.FindName(PartHeader, this) as StackPanel;
+            _header = Template.FindName(PartHeader, this) as Border;
             _list = Template.FindName(PartList, this) as DataGrid;
             _footer = Template.FindName(PartFooter, this) as Border;
             _searcghField = Template.FindName(PartSearchField, this) as TextBox;
             _clearButton = Template.FindName(PartClearButton, this) as Button;
             _addButton = Template.FindName(PartAddButton, this) as Button;
-            _refreshButton = Template.FindName(PartClearButton, this) as Button;
+            _refreshButton = Template.FindName(PartReloadButton, this) as Button;
             _itemCountLabel = Template.FindName(PartItemCount, this) as TextBlock;
 
             var dispMember = DisplayMember;
@@ -337,6 +365,29 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
             {
                 _addButton.Visibility = (ShowAddButton) ? Visibility.Visible : Visibility.Collapsed;
             }
+
+            if (HeaderBorderStyle != null)
+                _header.Style = HeaderBorderStyle;
+
+            if (FooterBorderStyle != null)
+                _footer.Style = FooterBorderStyle;
+
+            if (ButtonStyle != null)
+            {
+                _clearButton.Style = ButtonStyle;
+                _addButton.Style = ButtonStyle;
+                _refreshButton.Style = ButtonStyle;
+            }
+            _list.SelectionChanged += OnItemChanged;
+        }
+
+        private void OnItemChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGridRow row = sender as DataGridRow;
+
+            var obj = row?.Item;
+
+            SelectionChanged.Invoke(this, obj);
         }
 
         private void OnTextChanged(object sender, TextChangedEventArgs e)
@@ -348,12 +399,14 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
         {
             DataGridRow row = sender as DataGridRow;
 
-            OnDoubleClickItem?.Invoke(this, row.Item);
+            var obj = row?.Item;
+
+            OnDoubleClickItem?.Invoke(this, obj);
             // Some operations with this row
 
-            if (DoubleClickCommand != null && DoubleClickCommand.CanExecute(row.Item))
+            if (DoubleClickCommand != null && DoubleClickCommand.CanExecute(obj))
             {
-                DoubleClickCommand.Execute(row.Item);
+                DoubleClickCommand.Execute(obj);
             }
         }
 

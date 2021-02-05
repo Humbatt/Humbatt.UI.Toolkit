@@ -5,6 +5,18 @@
         <ResourceDictionary Source="/Humbatt.UI.Toolkit.WPF;component/editors/themes/generic.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="SearchableListControl.HeaderBorderStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="Padding" Value="5" />
+    </Style>
+
+    <Style x:Key="SearchableListControl.FooterBorderStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="0,1,0,0"/>
+        <Setter Property="Margin" Value="0,0,0,5" />
+    </Style>
+
     <Style TargetType="{x:Type local:SearchableListControl}">
         <Setter Property="Template">
             <Setter.Value>
@@ -19,19 +31,23 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
-                            <StackPanel x:Name="PART_Header" Grid.Row="0" Orientation="Horizontal" Margin="0,2,0,2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock VerticalAlignment="Center" Text="{TemplateBinding SearchLabel}"/>
-                                <TextBox x:Name="PART_SearchField" Width="150" Margin="2,2,2,2" Text="{Binding Path=SearchText, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}"></TextBox>
-                                <Button x:Name="PART_ClearButton">
-                                    <ContentPresenter ContentSource="ClearButtonContent" />
-                                </Button>
-                                <Button  x:Name="PART_ReloadButton" Command="{TemplateBinding ReloadCommand}">
-                                    <ContentPresenter ContentSource="ReloadButtonContent" />
-                                </Button>
-                                <Button x:Name="PART_AddButton" Command="{TemplateBinding AddCommand}">
-                                    <ContentPresenter ContentSource="AddButtonContent" />
-                                </Button>
-                            </StackPanel>
+                            <Border x:Name="PART_Header" Grid.Row="0"  Style="{StaticResource SearchableListControl.HeaderBorderStyle}">
+                                <StackPanel  Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock VerticalAlignment="Center" Text="{TemplateBinding SearchLabel}"/>
+                                    <TextBox x:Name="PART_SearchField" Width="150" Margin="2,2,2,2" Text="{Binding Path=SearchText, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}"></TextBox>
+                                    <Button x:Name="PART_ClearButton">
+                                        <ContentPresenter ContentSource="ClearButtonContent" />
+                                    </Button>
+                                    <Button  x:Name="PART_ReloadButton" Command="{TemplateBinding ReloadCommand}">
+                                        <ContentPresenter ContentSource="ReloadButtonContent" />
+                                    </Button>
+                                    <Button x:Name="PART_AddButton" Command="{TemplateBinding AddCommand}">
+                                        <ContentPresenter ContentSource="AddButtonContent" />
+                                    </Button>
+
+                                </StackPanel>
+ 
+                            </Border>
 
                             <DataGrid x:Name="PART_List" Grid.Row="1" ItemsSource="{TemplateBinding ItemsSource}" 
                                               CanUserAddRows="False" 
@@ -46,7 +62,7 @@
                                               RowHeight="24" />
 
 
-                            <Border x:Name="PART_Footer" Grid.Row="2" Margin="0,0,0,5" BorderBrush="Gray" BorderThickness="0,1,0,0">
+                            <Border x:Name="PART_Footer" Grid.Row="2" Style="{StaticResource SearchableListControl.FooterBorderStyle}">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
