@@ -49,7 +49,7 @@
  
                             </Border>
 
-                            <DataGrid x:Name="PART_List" Grid.Row="1" ItemsSource="{TemplateBinding ItemsSource}" 
+                            <DataGrid x:Name="PART_List" Grid.Row="1" ItemsSource="{TemplateBinding ItemsSource}" Background="{TemplateBinding Background}"
                                               CanUserAddRows="False" 
                                               AutoGenerateColumns="False" 
                                               CanUserDeleteRows="False" 

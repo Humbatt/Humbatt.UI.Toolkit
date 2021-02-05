@@ -1,5 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                     xmlns:conts="http://wpf.humbatt.com/winfx/xaml/controls">
     <ResourceDictionary.MergedDictionaries>
         <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
@@ -7,4 +9,26 @@
         <!-- Theme setting -->
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="conts:SearchableListControl">
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="SearchLabel" Value="Search:" />
+        <Setter Property="AddButtonContent">
+            <Setter.Value>
+                <iconPacks:PackIconMaterial Kind="Plus" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ClearButtonContent">
+            <Setter.Value>
+                <iconPacks:PackIconMaterial Kind="TrashCanOutline" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ReloadButtonContent">
+            <Setter.Value>
+                <iconPacks:PackIconMaterial Kind="Reload" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ButtonStyle" Value="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" />
+    </Style>
 </ResourceDictionary>
