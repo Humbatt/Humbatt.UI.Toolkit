@@ -13,25 +13,15 @@ trigger:
     - '*.yml'
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'windows-2022'
 
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  netVersion: '5.x'
-  vsVersion: '16.8.0'
 
 name: 1.0.$(date:yyMM).$(date:dd)$(rev:r)
 steps:
-- task: UseDotNet@2
-  displayName: Install Latest .Net Core 5.x
-  inputs:
-    packageType: 'sdk'
-    version: '$(netVersion)'
-    vsVersion: '$(vsVersion)'
-    includePreviewVersions: true
-
 - task: DotNetCoreCLI@2
   displayName: Restore packages
   inputs:
@@ -43,7 +33,7 @@ steps:
     command: 'build'
     projects: 
       '$(solution)'
-    arguments: '-c $(buildConfiguration) /p:Platform="$(buildPlatform)" -p:Version=$(Build.BuildNumber)$(ReleaseSuffix) -p:AssemblyVersion=$(Build.BuildNumber) -p:FileVersion=$(Build.BuildNumber)'
+    arguments: '-c $(buildConfiguration) /p:Platform="$(buildPlatform)" -p:Version=$(Build.BuildNumber) -p:AssemblyVersion=$(Build.BuildNumber) -p:FileVersion=$(Build.BuildNumber)'
     
 - task: CopyFiles@2
   displayName: Copy Files to $(build.artifactstagingdirectory)
