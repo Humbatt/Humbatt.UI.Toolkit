@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Humbatt.UI.Toolkit.Desktop.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <!--<ResourceDictionary Source="/Humbatt.UI.Toolkit.WPF;component/editors/themes/generic.xaml"/>-->
+        <ResourceDictionary Source="/Humbatt.UI.Toolkit.Desktop;component/editors/themes/editors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="SearchableListControl.HeaderBorderStyle" TargetType="Border">

@@ -59,6 +59,11 @@
     <Compile Include="**\*.wpf.cs" />
     <Compile Include="**\*.wpf.*.cs" />
 
+
+    <Page Include="..\WPF\EditorThemes\Editors.xaml" Link="Editors\Themes\Editors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    
     <Page Include="..\WPF\Generic.xaml" Link="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -67,9 +72,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
 
-    <Page Include="..\WPF\EditorThemes\Generic.xaml" Link="Editors\Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
 
   <ItemGroup>

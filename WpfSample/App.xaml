@@ -1,0 +1,43 @@
+﻿<Application x:Class="WpfSample.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfSample"
+             StartupUri="MainWindow.xaml"
+             xmlns:conts="http://wpf.humbatt.com/winfx/xaml/controls"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Humbatt.UI.Toolkit.Desktop;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="conts:SearchableListControl">
+                <Setter Property="BorderBrush" Value="Gray" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="SearchLabel" Value="Search:" />
+                <Setter Property="AddButtonContent">
+                    <Setter.Value>
+                        <iconPacks:PackIconMaterial Kind="Plus" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ClearButtonContent">
+                    <Setter.Value>
+                        <iconPacks:PackIconMaterial Kind="TrashCanOutline" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ReloadButtonContent">
+                    <Setter.Value>
+                        <iconPacks:PackIconMaterial Kind="Reload" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ButtonStyle" Value="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" />
+            </Style>
+            
+        </ResourceDictionary>
+
+
+    </Application.Resources>
+</Application>
