@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net6.0-windows10.0.19041.0</TargetFrameworks>
+    <TargetFrameworks>net6.0-windows7.0;net6.0-windows10.0.19041.0;</TargetFrameworks>
     <RootNamespace>Humbatt.UI.Toolkit.Desktop</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Authors>humbatt, newky2k</Authors>
     <Company>humbatt, newky2k</Company>
-    <Description>WPF UI controls, extensions and helpers for .Net Core 3.x and Net 5+</Description>
+    <Description>WPF and WinUI UI controls, extensions and helpers for .Net Core 3.x and Net 5+</Description>
     <PackageProjectUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
@@ -29,8 +29,14 @@
     <DefineConstants>$(DefineConstants);WINUI</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" $(TargetFramework.StartsWith('net6.0-windows7.0')) ">
+    <UseWPF>true</UseWPF>
+    <DefineConstants>$(DefineConstants);WPF</DefineConstants>
+  </PropertyGroup>
+  
   <ItemGroup>
     <None Include="..\readme.md" Pack="true" PackagePath="\" />
+    <None Include="Models\RequiredValidationRule.wpf.cs" />
     <Compile Include="**\*.shared.cs" />
     <Compile Include="**\*.shared.*.cs" />
   </ItemGroup>
@@ -42,16 +48,53 @@
       <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
       <Compile Include="**\*.winui.cs" />
       <Compile Include="**\*.winui.*.cs" />
-      <None Update="Themes\Generic.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </None>
+
+    <Page Include="..\WinUI\Generic.xaml" Link="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-windows7.0')) ">
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <Compile Include="**\*.wpf.cs" />
+    <Compile Include="**\*.wpf.*.cs" />
+
+    <Page Include="..\WPF\Generic.xaml" Link="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+
+    <Page Include="Controls\FluidProgressBar.wpf.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+
+    <Page Include="..\WPF\EditorThemes\Generic.xaml" Link="Editors\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controls\FluidProgressBar.wpf.xaml" />
+    <None Remove="Resources\no-image-icon.png" />
   </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\Humbatt.UI.Toolkit.Core\Humbatt.UI.Toolkit.Core.csproj" />
   </ItemGroup>
-  
-  <ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Behaviours\" />
+    <Folder Include="Editors\Themes\" />
+    <Folder Include="Themes\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\no-image-icon.png" />
+  </ItemGroup>
+  
 </Project>

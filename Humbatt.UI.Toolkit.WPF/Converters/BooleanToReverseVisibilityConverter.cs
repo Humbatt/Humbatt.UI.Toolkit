@@ -18,8 +18,7 @@ namespace Humbatt.UI.Toolkit.WPF.Converters
 
         #region IValueConverter Members
 
-        public object Convert(object value, Type targetType, object parameter,
-            System.Globalization.CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value == null)
                 return Visibility.Visible;
@@ -42,8 +41,7 @@ namespace Humbatt.UI.Toolkit.WPF.Converters
             return (bVal == true) ? hide : Visibility.Visible;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter,
-            System.Globalization.CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new NotSupportedException();
         }
