@@ -39,15 +39,19 @@
       <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221109.1" />
       <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
       <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
+      <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
       <Compile Include="**\*.winui.cs" />
       <Compile Include="**\*.winui.*.cs" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
+      <None Update="Themes\Generic.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </None>
   </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\Humbatt.UI.Toolkit.Core\Humbatt.UI.Toolkit.Core.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+
   </ItemGroup>
 </Project>
