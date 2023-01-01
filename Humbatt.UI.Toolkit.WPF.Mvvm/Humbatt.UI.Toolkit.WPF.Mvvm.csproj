@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DSoft.System.Mvvm" Version="2.4.2109.301" />
+    <PackageReference Include="DSoft.System.Mvvm" Version="3.1.2208.151" />
   </ItemGroup>
 
   <ItemGroup>

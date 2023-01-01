@@ -21,6 +21,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".ci", ".ci", "{30787332-25C
 		azure-pipelines-release.yml = azure-pipelines-release.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{9E4D6CC4-3664-4491-9CAD-6E94100FA262}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{666FECCC-9FEF-4CD5-983E-4D85C64ECDD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Humbatt.UI.Toolkit.Desktop", "Humbatt.UI.Toolkit.Desktop\Humbatt.UI.Toolkit.Desktop.csproj", "{87952084-4D25-449E-BE1D-743E0A120449}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,12 +53,20 @@ Global
 		{960CFC5C-F38E-43B3-BC80-3C7214E3F937}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{960CFC5C-F38E-43B3-BC80-3C7214E3F937}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{960CFC5C-F38E-43B3-BC80-3C7214E3F937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87952084-4D25-449E-BE1D-743E0A120449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87952084-4D25-449E-BE1D-743E0A120449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87952084-4D25-449E-BE1D-743E0A120449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87952084-4D25-449E-BE1D-743E0A120449}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{1B01DA36-A39E-4C7F-B336-3D050DF89A0F} = {9E4D6CC4-3664-4491-9CAD-6E94100FA262}
+		{360C611F-08DD-4971-96C3-50089C4B1EE7} = {9E4D6CC4-3664-4491-9CAD-6E94100FA262}
 		{89074AB2-36CA-4D56-9038-66833E60C1EA} = {50E4896E-4377-4E40-B46F-170D9D089748}
+		{960CFC5C-F38E-43B3-BC80-3C7214E3F937} = {9E4D6CC4-3664-4491-9CAD-6E94100FA262}
+		{87952084-4D25-449E-BE1D-743E0A120449} = {666FECCC-9FEF-4CD5-983E-4D85C64ECDD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3E44960-EBF2-4BFB-8A4E-3B2175936506}
