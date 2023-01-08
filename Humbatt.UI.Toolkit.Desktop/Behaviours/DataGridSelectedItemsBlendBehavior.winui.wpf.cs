@@ -1,9 +1,9 @@
-#if WINUI
+#if WINDOWS10_0_17763_0_OR_GREATER
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
 using Microsoft.Xaml.Interactivity;
 using CommunityToolkit.WinUI.UI.Controls;
-#elif WPF
+#elif WINDOWS7_0_OR_GREATER
 using Microsoft.Xaml.Behaviors;
 using System.Windows;
 using System.Windows.Controls;
