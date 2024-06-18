@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".ci", ".ci", "{30787332-25C
 	ProjectSection(SolutionItems) = preProject
 		azure-pipelines-mergetest.yml = azure-pipelines-mergetest.yml
 		azure-pipelines-release.yml = azure-pipelines-release.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{9E4D6CC4-3664-4491-9CAD-6E94100FA262}"
@@ -27,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{666F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humbatt.UI.Toolkit.Desktop", "Humbatt.UI.Toolkit.Desktop\Humbatt.UI.Toolkit.Desktop.csproj", "{87952084-4D25-449E-BE1D-743E0A120449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSample", "WpfSample\WpfSample.csproj", "{A411D989-7B6D-4EC8-A226-E0FD153CD9A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfSample", "WpfSample\WpfSample.csproj", "{A411D989-7B6D-4EC8-A226-E0FD153CD9A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

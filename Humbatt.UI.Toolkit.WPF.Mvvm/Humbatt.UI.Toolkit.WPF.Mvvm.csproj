@@ -1,30 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net6.0-windows</TargetFrameworks>
-    <UseWPF>true</UseWPF>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Authors>humbatt newky2k</Authors>
-    <Company>humbatt newky2k</Company>
-    <Description>Mvmm based controls and classess for Humbatt.UI.Toolkit.WPF for .Net Core 3.x and Net 5+</Description>
-    <PackageProjectUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</RepositoryUrl>
-    <RepositoryType>github</RepositoryType>
-    <PackageTags>WPF Controls</PackageTags>
-    <PackageReleaseNotes>Added support for .Net 5</PackageReleaseNotes>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>humbatt.snk</AssemblyOriginatorKeyFile>
-    <Copyright>Copyright © 2020 Humbatt</Copyright>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-windows;net8.0-windows</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Authors>humbatt newky2k</Authors>
+		<Company>humbatt newky2k</Company>
+		<Description>Mvmm based controls and classess for Humbatt.UI.Toolkit.WPF for .Net Core 3.x and Net 5+</Description>
+		<PackageProjectUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</RepositoryUrl>
+		<RepositoryType>github</RepositoryType>
+		<PackageTags>WPF Controls</PackageTags>
+		<PackageReleaseNotes>Added support for .Net 5</PackageReleaseNotes>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>humbatt.snk</AssemblyOriginatorKeyFile>
+		<Copyright>Copyright © 2024 Humbatt</Copyright>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="DSoft.System.Mvvm" Version="3.1.2208.151" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DSoft.System.Mvvm" Version="3.3.2405.241" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj" />
+	</ItemGroup>
 
 </Project>
