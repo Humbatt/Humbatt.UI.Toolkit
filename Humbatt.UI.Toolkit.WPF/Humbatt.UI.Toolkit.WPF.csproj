@@ -13,7 +13,7 @@
 		<RepositoryUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</RepositoryUrl>
 		<RepositoryType>github</RepositoryType>
 		<PackageTags>WPF Controls</PackageTags>
-		<PackageReleaseNotes>Added support for .Net 5</PackageReleaseNotes>
+		<PackageReleaseNotes>Added support for .Net 6 and 8</PackageReleaseNotes>
 		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>humbatt.snk</AssemblyOriginatorKeyFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
