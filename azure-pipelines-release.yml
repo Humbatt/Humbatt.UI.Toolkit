@@ -13,14 +13,14 @@ trigger:
     - '*.yml'
 
 pool:
-  vmImage: 'windows-2022'
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-name: 1.0.$(date:yyMM).$(date:dd)$(rev:r)
+name: 2.0.$(date:yyMM).$(date:dd)$(rev:r)
 steps:
 - task: DotNetCoreCLI@2
   displayName: Restore packages

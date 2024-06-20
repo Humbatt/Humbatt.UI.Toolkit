@@ -301,6 +301,7 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
             set { SetValue(ButtonStyleProperty, value); }
         }
         #endregion
+
         #region Internals
 
 
