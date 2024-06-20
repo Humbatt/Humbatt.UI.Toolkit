@@ -21,6 +21,7 @@
 		<Configurations>Debug;Release</Configurations>
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 	</PropertyGroup>
 
 	<ItemGroup>
