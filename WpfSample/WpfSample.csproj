@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
-    <PackageReference Include="DSoft.System.Mvvm" Version="3.3.2405.241" />
+    <PackageReference Include="DSoft.System.Mvvm" Version="3.4.2406.251" />
   </ItemGroup>
 
 </Project>

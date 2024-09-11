@@ -33,6 +33,7 @@
 		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
 		<UseWinUI>true</UseWinUI>
 		<DefineConstants>$(DefineConstants);WINUI</DefineConstants>
+		<WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" $(TargetFramework.StartsWith('net8.0-windows7.0')) ">
@@ -48,10 +49,10 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" $(TargetFramework.StartsWith('net8.0-windows10')) ">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240607001" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240829007" />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
-		<PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
+		<PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.2" />
 		<Compile Include="**\*.winui.cs" />
 		<Compile Include="**\*.winui.*.cs" />
 
@@ -61,7 +62,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" $(TargetFramework.StartsWith('net8.0-windows7.0')) ">
-		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
 		<Compile Include="**\*.wpf.cs" />
 		<Compile Include="**\*.wpf.*.cs" />
 
@@ -96,7 +97,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Behaviours\" />
 		<Folder Include="Editors\Themes\" />
 		<Folder Include="Themes\" />
 	</ItemGroup>

@@ -20,14 +20,15 @@
                                         SelectedItem="{Binding SelectedItem}"
                                         ReloadCommand="{Binding RefreshCommand}" 
                                         DoubleClickCommand="{Binding DoubleClickCommand}"
-                                        ShowAddButton="{Binding ShowAddButton}"
-                                        />
-        <Grid  Grid.Column="1">
+                                        ShowAddButton="{Binding ShowAddButton}" />
+        <StackPanel Grid.Column="1" Margin="10,0,10,0">
+            <TextBlock>Decimal Box</TextBlock>
             <editors:DecimalTextBox />
+            <TextBlock>ComboxBox</TextBlock>
             <editors:MultiComboBox Height="20"/>
             <controls:FluidProgressBar />
             <controls:LoadingProgressView />
-        </Grid>
+        </StackPanel>
 
     </Grid>
 </Window>

@@ -25,7 +25,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="DSoft.System.Mvvm" Version="3.3.2405.241" />
+		<PackageReference Include="DSoft.System.Mvvm" Version="3.4.2406.251" />
 	</ItemGroup>
 
 	<ItemGroup>
