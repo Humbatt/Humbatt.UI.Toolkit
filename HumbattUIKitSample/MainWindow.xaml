@@ -25,7 +25,7 @@
             <TextBlock>Decimal Box</TextBlock>
             <editors:DecimalTextBox />
             <TextBlock>ComboxBox</TextBlock>
-            <editors:MultiComboBox Height="20"/>
+            <editors:MultiComboBox Height="20" Margin="10,5,10,5"/>
             <controls:FluidProgressBar />
             <controls:LoadingProgressView />
         </StackPanel>

@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RootNamespace>Humbatt.UI.Toolkit.Desktop</RootNamespace>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Authors>humbatt, newky2k</Authors>
+		<Company>humbatt, newky2k</Company>
+		<Description>Humbatt.UI.Toolkit WPF extensions and helpers for .NET 8+ using MahApps</Description>
+		<PackageProjectUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</RepositoryUrl>
+		<RepositoryType>github</RepositoryType>
+		<PackageTags>WPF Controls</PackageTags>
+		<PackageReleaseNotes>Added support for .Net 6 and 8</PackageReleaseNotes>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>humbatt.snk</AssemblyOriginatorKeyFile>
+		<Copyright>Copyright © 2024 Humbatt</Copyright>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<Configurations>Debug;Release</Configurations>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="MahApps.Metro" Version="2.4.10" />
+		<PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop\Humbatt.UI.Toolkit.Desktop.csproj" />
+	</ItemGroup>
+	
+</Project>
+
