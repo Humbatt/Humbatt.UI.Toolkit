@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfSample"
-         d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
+        d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
         xmlns:controls="http://wpf.humbatt.com/winfx/xaml/controls"
         xmlns:editors="http://wpf.humbatt.com/winfx/xaml/editors"
         mc:Ignorable="d" Loaded="OnLoaded"
@@ -14,7 +14,7 @@
             <ColumnDefinition Width="400" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <controls:SearchableListControl Style="{DynamicResource Humbatt.Wpf.SearchableListControl.MahApps}" ItemsSource="{Binding Items}" 
+        <controls:SearchableListControl Style="{DynamicResource Humbatt.Wpf.SearchableListControl.Style.WPFUI}" ItemsSource="{Binding Items}" 
                                         SearchText="{Binding SearchText}" 
                                         DisplayMember="Name" 
                                         SelectedItem="{Binding SelectedItem}"

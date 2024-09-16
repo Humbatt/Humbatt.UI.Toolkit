@@ -32,6 +32,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="WPF-UI" Version="3.0.5" />
+		<PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

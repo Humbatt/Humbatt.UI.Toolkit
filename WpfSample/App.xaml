@@ -8,9 +8,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Humbatt.UI.Toolkit.Desktop.MahApps;component/Themes/Generic.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/Humbatt.UI.Toolkit.Desktop.MahApps;component/Themes/Generic.xaml" />-->
+                <ResourceDictionary Source="pack://application:,,,/Humbatt.UI.Toolkit.Desktop.WPF-UI;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
-           
+
         </ResourceDictionary>
 
 

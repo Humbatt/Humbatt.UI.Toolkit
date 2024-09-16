@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop.MahApps\Humbatt.UI.Toolkit.Desktop.MahApps.csproj" />
+    <ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop.WPF-UI\Humbatt.UI.Toolkit.Desktop.WPF-UI.csproj" />
     <ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop\Humbatt.UI.Toolkit.Desktop.csproj" />
   </ItemGroup>
 

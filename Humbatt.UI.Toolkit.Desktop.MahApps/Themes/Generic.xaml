@@ -1,14 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:conts="http://wpf.humbatt.com/winfx/xaml/controls"
-                    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+                    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:local="clr-namespace:Humbatt.UI.Toolkit.Desktop.Controls;assembly=Humbatt.UI.Toolkit.Desktop">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
     </ResourceDictionary.MergedDictionaries>
-
-    <Style x:Key="Humbatt.Wpf.SearchableListControl.MahApps" TargetType="conts:SearchableListControl">
+    
+    <Style x:Key="Humbatt.Wpf.SearchableListControl.Style.MahApps" TargetType="conts:SearchableListControl">
         <Setter Property="BorderBrush" Value="Gray" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="SearchLabel" Value="Search:" />
