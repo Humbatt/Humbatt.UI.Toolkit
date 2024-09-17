@@ -14,7 +14,7 @@
             <ColumnDefinition Width="400" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <controls:SearchableListControl Style="{DynamicResource Humbatt.Wpf.SearchableListControl.Style.WPFUI}" ItemsSource="{Binding Items}" 
+        <controls:SearchableListControl Style="{DynamicResource Humbatt.Wpf.SearchableListControl.Style.MahApps}" ItemsSource="{Binding Items}" 
                                         SearchText="{Binding SearchText}" 
                                         DisplayMember="Name" 
                                         SelectedItem="{Binding SelectedItem}"

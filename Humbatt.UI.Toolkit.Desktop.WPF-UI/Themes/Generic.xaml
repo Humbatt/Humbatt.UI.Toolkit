@@ -3,10 +3,6 @@
                     xmlns:conts="http://wpf.humbatt.com/winfx/xaml/controls"
                     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
                     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
-    <ResourceDictionary.MergedDictionaries>
-        <ui:ThemesDictionary Theme="Light" />
-        <ui:ControlsDictionary />
-    </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="SearchableListControl.HeaderBorderStyle" TargetType="{x:Type Border}">
         <Setter Property="BorderBrush" Value="Gray"/>

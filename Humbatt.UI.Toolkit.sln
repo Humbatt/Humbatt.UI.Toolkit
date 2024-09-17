@@ -30,11 +30,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humbatt.UI.Toolkit.Desktop"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfSample", "WpfSample\WpfSample.csproj", "{A411D989-7B6D-4EC8-A226-E0FD153CD9A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUISample", "WinUISample\WinUISample.csproj", "{09F94D36-C99B-47DF-A015-B1EF62C53ED3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinUISample", "WinUISample\WinUISample.csproj", "{09F94D36-C99B-47DF-A015-B1EF62C53ED3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Humbatt.UI.Toolkit.Desktop.WPF-UI", "Humbatt.UI.Toolkit.Desktop.WPF-UI\Humbatt.UI.Toolkit.Desktop.WPF-UI.csproj", "{21B5D95C-E56F-4927-A554-02D80E806167}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humbatt.UI.Toolkit.Desktop.WPF-UI", "Humbatt.UI.Toolkit.Desktop.WPF-UI\Humbatt.UI.Toolkit.Desktop.WPF-UI.csproj", "{21B5D95C-E56F-4927-A554-02D80E806167}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Humbatt.UI.Toolkit.Desktop.MahApps", "Humbatt.UI.Toolkit.Desktop.MahApps\Humbatt.UI.Toolkit.Desktop.MahApps.csproj", "{615748CC-8B75-498A-BC15-4712625681DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humbatt.UI.Toolkit.Desktop.MahApps", "Humbatt.UI.Toolkit.Desktop.MahApps\Humbatt.UI.Toolkit.Desktop.MahApps.csproj", "{615748CC-8B75-498A-BC15-4712625681DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFUISample", "WPFUISample\WPFUISample.csproj", "{E107ABD7-C237-4430-914D-AE2D2B580947}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -216,6 +218,22 @@ Global
 		{615748CC-8B75-498A-BC15-4712625681DE}.Release|x64.Build.0 = Release|Any CPU
 		{615748CC-8B75-498A-BC15-4712625681DE}.Release|x86.ActiveCfg = Release|Any CPU
 		{615748CC-8B75-498A-BC15-4712625681DE}.Release|x86.Build.0 = Release|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Debug|x64.Build.0 = Debug|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Debug|x86.Build.0 = Debug|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Release|ARM64.Build.0 = Release|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Release|x64.ActiveCfg = Release|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Release|x64.Build.0 = Release|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Release|x86.ActiveCfg = Release|Any CPU
+		{E107ABD7-C237-4430-914D-AE2D2B580947}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -230,6 +248,7 @@ Global
 		{09F94D36-C99B-47DF-A015-B1EF62C53ED3} = {50E4896E-4377-4E40-B46F-170D9D089748}
 		{21B5D95C-E56F-4927-A554-02D80E806167} = {666FECCC-9FEF-4CD5-983E-4D85C64ECDD3}
 		{615748CC-8B75-498A-BC15-4712625681DE} = {666FECCC-9FEF-4CD5-983E-4D85C64ECDD3}
+		{E107ABD7-C237-4430-914D-AE2D2B580947} = {50E4896E-4377-4E40-B46F-170D9D089748}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3E44960-EBF2-4BFB-8A4E-3B2175936506}
