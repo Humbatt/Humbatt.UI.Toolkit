@@ -30,12 +30,12 @@
                                     SelectedItem="{Binding SelectedItem}"
                                     ReloadCommand="{Binding RefreshCommand}" 
                                     DoubleClickCommand="{Binding DoubleClickCommand}"
-                                    ShowAddButton="{Binding ShowAddButton}" />
+                                    ShowAddButton="{Binding ShowAddButton}" BorderBrush="LightGray" />
         <StackPanel Grid.Column="1" Margin="10,0,10,0">
             <TextBlock>Decimal Box</TextBlock>
-            <editors:DecimalTextBox />
+            <editors:DecimalTextBox Height="26"/>
             <TextBlock>ComboxBox</TextBlock>
-            <editors:MultiComboBox Height="20"/>
+            <editors:MultiComboBox Height="26" />
             <controls:FluidProgressBar />
             <!--<controls:LoadingProgressView />-->
         </StackPanel>
