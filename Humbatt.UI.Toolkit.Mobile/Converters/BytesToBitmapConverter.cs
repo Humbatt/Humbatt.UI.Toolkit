@@ -9,9 +9,9 @@ namespace Humbatt.UI.Toolkit.Mobile.Converters
 {
     public class BytesToBitmapConverter : BaseConverter, IValueConverter
     {
-        private static FileImageSource _missingImage;
+        private static ImageSource _missingImage;
 
-        public static FileImageSource MissingImage
+        public static ImageSource MissingImage
         {
             get
             {
@@ -33,16 +33,8 @@ namespace Humbatt.UI.Toolkit.Mobile.Converters
                 {
                     using (var ms = new MemoryStream(bytes))
                     {
-                        var image = new FileImageSource();
-                       
-//#if WINUI
-//						image.SetSource(ms.AsRandomAccessStream());
-//#elif WPF
-//                        image.BeginInit();
-//						image.CacheOption = BitmapCacheOption.OnLoad; // here
-//						image.StreamSource = ms;
-//						image.EndInit();
-//#endif
+                        var image = ImageSource.FromStream(() => ms);
+
                         return image;
                     }
                 }
