@@ -11,7 +11,7 @@ namespace Humbatt.UI.Toolkit.Desktop.Models
 	/// <summary>
 	/// A generic suggestion provider. 
 	/// </summary>
-	/// <seealso cref="WpfControls.Editors.ISuggestionProvider" />
+	/// <seealso cref="ISuggestionProvider" />
 	public class SuggestionProvider : ISuggestionProvider
 	{
 

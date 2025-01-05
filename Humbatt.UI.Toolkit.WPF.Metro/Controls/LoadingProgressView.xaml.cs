@@ -42,8 +42,8 @@ namespace Humbatt.UI.Toolkit.WPF.Controls
         /// <summary>
         /// Provides derived classes an opportunity to handle changes to the TotalDuration property.
         /// </summary>
-        /// <param name="oldTotalDuration">Old Value</param>
-        /// <param name="newTotalDuration">New Value</param>
+        /// <param name="oldMessage">Old Value</param>
+        /// <param name="newMessage">New Value</param>
         protected void OnLoadingMessageChanged(string oldMessage, string newMessage)
         {
             if (!oldMessage.Equals(newMessage))

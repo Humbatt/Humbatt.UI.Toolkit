@@ -7,7 +7,7 @@ namespace Humbatt.UI.Toolkit.WPF.Editors
     /// <summary>
     /// A generic suggestion provider. 
     /// </summary>
-    /// <seealso cref="WpfControls.Editors.ISuggestionProvider" />
+    /// <seealso cref="ISuggestionProvider" />
     public class SuggestionProvider : ISuggestionProvider
     {
 

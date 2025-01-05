@@ -1,21 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-windows7.0;net8.0-windows10.0.19041.0;</TargetFrameworks>
+		<TargetFrameworks>net8.0-windows7.0;net8.0-windows10.0.19041.0;net9.0-windows7.0;net9.0-windows10.0.19041.0;</TargetFrameworks>
 		<RootNamespace>Humbatt.UI.Toolkit.Desktop</RootNamespace>
-		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Authors>humbatt, newky2k</Authors>
-		<Company>humbatt, newky2k</Company>
 		<Description>WPF and WinUI UI controls, extensions and helpers for .Net Core 3.x and Net 5+</Description>
-		<PackageProjectUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</RepositoryUrl>
-		<RepositoryType>github</RepositoryType>
-		<PackageTags>WPF Controls</PackageTags>
+		<PackageTags>WPF WinUI</PackageTags>
 		<PackageReleaseNotes>Added support for .Net 6 and 8</PackageReleaseNotes>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>humbatt.snk</AssemblyOriginatorKeyFile>
-		<Copyright>Copyright © 2024 Humbatt</Copyright>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 		<Configurations>Debug;Release</Configurations>
@@ -28,7 +17,7 @@
 		<None Include="../README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
-	<PropertyGroup Condition=" $(TargetFramework.StartsWith('net8.0-windows10')) ">
+	<PropertyGroup Condition=" $(TargetFramework.Contains('-windows10')) ">
 		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
 		<UseWinUI>true</UseWinUI>
@@ -36,7 +25,7 @@
 		<WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
 	</PropertyGroup>
 
-	<PropertyGroup Condition=" $(TargetFramework.StartsWith('net8.0-windows7.0')) ">
+	<PropertyGroup Condition=" $(TargetFramework.Contains('-windows7.0')) ">
 		<UseWPF>true</UseWPF>
 		<DefineConstants>$(DefineConstants);WPF</DefineConstants>
 	</PropertyGroup>
@@ -48,7 +37,7 @@
 		<Compile Include="**\*.shared.*.cs" />
 	</ItemGroup>
 
-	<ItemGroup Condition=" $(TargetFramework.StartsWith('net8.0-windows10')) ">
+	<ItemGroup Condition=" $(TargetFramework.Contains('-windows10')) ">
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240829007" />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
@@ -61,7 +50,7 @@
 		</Page>
 	</ItemGroup>
 
-	<ItemGroup Condition=" $(TargetFramework.StartsWith('net8.0-windows7.0')) ">
+	<ItemGroup Condition=" $(TargetFramework.Contains('-windows7.0')) ">
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
 		<Compile Include="**\*.wpf.cs" />
 		<Compile Include="**\*.wpf.*.cs" />

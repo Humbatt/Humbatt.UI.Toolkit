@@ -11,7 +11,7 @@ namespace Humbatt.UI.Toolkit.Desktop.Converters
 	/// <summary>
 	/// Converts a hex string color to a SolidColorBrush
 	/// </summary>
-	/// <seealso cref="Humbatt.UI.Toolkit.WPF.Converters.BaseConverter" />
+	/// <seealso cref="BaseConverter" />
 	/// <seealso cref="System.Windows.Data.IValueConverter" />
 	[ValueConversion(typeof(string), typeof(SolidColorBrush))]
 	public class HexStringToColorConverter : BaseConverter, IValueConverter

@@ -18,7 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj" />
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop\Humbatt.UI.Toolkit.Desktop.csproj" />
 	</ItemGroup>
 
 </Project>

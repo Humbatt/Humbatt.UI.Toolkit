@@ -1,21 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFrameworks>net9.0-windows</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<SignAssembly>false</SignAssembly>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MahApps.Metro" Version="2.4.10" />
+		<PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Humbatt.UI.Toolkit.Core\Humbatt.UI.Toolkit.Core.csproj" />
-    <ProjectReference Include="..\Humbatt.UI.Toolkit.WPF.Metro\Humbatt.UI.Toolkit.WPF.Metro.csproj" />
-    <ProjectReference Include="..\Humbatt.UI.Toolkit.WPF.Mvvm\Humbatt.UI.Toolkit.WPF.Mvvm.csproj" />
-    <ProjectReference Include="..\Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.Core\Humbatt.UI.Toolkit.Core.csproj" />
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.WPF.Metro\Humbatt.UI.Toolkit.WPF.Metro.csproj" />
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.WPF.Mvvm\Humbatt.UI.Toolkit.WPF.Mvvm.csproj" />
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj" />
+	</ItemGroup>
 
 </Project>
