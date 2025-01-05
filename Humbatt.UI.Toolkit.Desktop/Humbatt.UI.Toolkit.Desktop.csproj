@@ -2,10 +2,9 @@
 	<PropertyGroup>
 		<TargetFrameworks>net8.0-windows7.0;net8.0-windows10.0.19041.0;net9.0-windows7.0;net9.0-windows10.0.19041.0;</TargetFrameworks>
 		<RootNamespace>Humbatt.UI.Toolkit.Desktop</RootNamespace>
-		<Description>WPF and WinUI UI controls, extensions and helpers for .Net Core 3.x and Net 5+</Description>
+		<Description>WPF and WinUI UI controls, extensions and helpers for .NET 8.0+</Description>
 		<PackageTags>WPF WinUI</PackageTags>
-		<PackageReleaseNotes>Added support for .Net 6 and 8</PackageReleaseNotes>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageReleaseNotes>Added support for .NET 9.0</PackageReleaseNotes>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 		<Configurations>Debug;Release</Configurations>
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
@@ -31,7 +30,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\readme.md" Pack="true" PackagePath="\" />
 		<None Include="Models\RequiredValidationRule.wpf.cs" />
 		<Compile Include="**\*.shared.cs" />
 		<Compile Include="**\*.shared.*.cs" />

@@ -8,7 +8,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Description>Humbatt.UI.Toolkit WPF extensions and helpers for .NET 8+ using MahApps</Description>
 		<PackageTags>WPF Controls</PackageTags>
-		<PackageReleaseNotes>Added support for .Net 6 and 8</PackageReleaseNotes>
+		<PackageReleaseNotes>Added support for .NET 9.0</PackageReleaseNotes>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<Configurations>Debug;Release</Configurations>
 		<PackageReadmeFile>README.md</PackageReadmeFile>

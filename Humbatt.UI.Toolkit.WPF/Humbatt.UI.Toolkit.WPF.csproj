@@ -5,7 +5,7 @@
 		<UseWPF>true</UseWPF>
 		<Description>WPF UI controls, extensions and helpers for .Net Core 3.x and Net 5+</Description>
 		<PackageTags>WPF Controls</PackageTags>
-		<PackageReleaseNotes>Added support for .Net 6 and 8</PackageReleaseNotes>
+		<PackageReleaseNotes>Added support for .NET 9.0</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
