@@ -17,7 +17,6 @@ namespace Humbatt.UI.Toolkit.Desktop.Converters
 	/// <summary>
 	/// Converter for switching converting between an enum and boolean for use in a Radio button group
 	/// </summary>
-	/// 
 	public class EnumMatchToBooleanConverter : BaseConverter, IValueConverter
 	{
 		public EnumMatchToBooleanConverter()

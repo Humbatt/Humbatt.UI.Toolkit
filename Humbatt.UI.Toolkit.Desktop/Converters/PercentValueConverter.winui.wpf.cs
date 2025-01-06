@@ -21,7 +21,11 @@ namespace Humbatt.UI.Toolkit.Desktop.Converters
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 #endif
         {
+            if (value == null)
+                return 0;
+
             double dv = (double)value;
+
 			if (dv > 0)
 				return dv / 100;
 
