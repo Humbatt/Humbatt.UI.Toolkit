@@ -8,36 +8,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Humbatt.UI.Toolkit.Desktop;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/PresentationFramework.Fluent;component/Themes/Fluent.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
-            <Style TargetType="conts:SearchableListControl">
-                <Setter Property="BorderBrush" Value="Gray" />
-                <Setter Property="BorderThickness" Value="1" />
-                <Setter Property="SearchLabel" Value="Search:" />
-                <Setter Property="AddButtonContent">
-                    <Setter.Value>
-                        <iconPacks:PackIconMaterial Kind="Plus" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="ClearButtonContent">
-                    <Setter.Value>
-                        <iconPacks:PackIconMaterial Kind="TrashCanOutline" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="ReloadButtonContent">
-                    <Setter.Value>
-                        <iconPacks:PackIconMaterial Kind="Reload" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="ButtonStyle" Value="{DynamicResource MahApps.Styles.Button.MetroSquare.Accent}" />
-            </Style>
-            
         </ResourceDictionary>
-
-
     </Application.Resources>
 </Application>

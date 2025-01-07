@@ -1,19 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFrameworks>net9.0-windows</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<SignAssembly>false</SignAssembly>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop\Humbatt.UI.Toolkit.Desktop.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop.MahApps\Humbatt.UI.Toolkit.Desktop.MahApps.csproj" />
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop\Humbatt.UI.Toolkit.Desktop.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
-    <PackageReference Include="DSoft.System.Mvvm" Version="3.3.2405.241" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DSoft.System.Mvvm" Version="3.4.2406.251" />
+	</ItemGroup>
 
 </Project>

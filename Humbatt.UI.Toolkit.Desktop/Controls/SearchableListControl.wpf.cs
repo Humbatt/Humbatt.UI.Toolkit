@@ -86,7 +86,10 @@ namespace Humbatt.UI.Toolkit.Desktop.Controls
 		{
 			var sh = (SearchableListControl)d;
 
-			sh._addButton.Visibility = ((bool)e.NewValue) ? Visibility.Visible : Visibility.Collapsed;
+			if (sh._addButton != null)
+			{
+				sh._addButton.Visibility = ((bool)e.NewValue) ? Visibility.Visible : Visibility.Collapsed;
+			}
 		}
 
 
@@ -175,11 +178,18 @@ namespace Humbatt.UI.Toolkit.Desktop.Controls
 			{
 				sh._labelCountInternal = true;
 
-				sh._itemCountLabel.Text = $"Found {items.Cast<object>().Count()} item(s)";
+				if (sh._itemCountLabel != null)
+				{
+                    sh._itemCountLabel.Text = $"Found {items.Cast<object>().Count()} item(s)";
+                }
+				
 			}
 			else if (sh._labelCountInternal == true)
 			{
-				sh._itemCountLabel.Text = $"Found {items.Cast<object>().Count()} item(s)";
+				if (sh._itemCountLabel != null)
+				{
+					sh._itemCountLabel.Text = $"Found {items.Cast<object>().Count()} item(s)";
+				}
 			}
 			//if (string.IsNullOrWhiteSpace(sh.ItemCountText))
 			//    

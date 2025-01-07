@@ -15,6 +15,8 @@ namespace HumbattUIKitSample
     {
         public override async Task RefreshAsync()
         {
+            await Task.Delay(1);
+
             Items = new ObservableCollection<ItemModel>()
             {
                 new ItemModel()

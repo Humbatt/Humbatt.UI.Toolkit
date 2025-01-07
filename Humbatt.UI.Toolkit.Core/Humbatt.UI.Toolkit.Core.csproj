@@ -2,20 +2,9 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Authors>humbatt newky2k</Authors>
-		<Company>humbatt newky2k</Company>
 		<Description>Common shared classes for Humbatt.UI.Toolkit</Description>
-		<PackageProjectUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/Humbatt/Humbatt.UI.Toolkit</RepositoryUrl>
-		<RepositoryType>github</RepositoryType>
 		<PackageTags>WPF Controls</PackageTags>
-		<PackageReleaseNotes>Added support for .Net 5</PackageReleaseNotes>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>humbatt.snk</AssemblyOriginatorKeyFile>
-		<Copyright>Copyright © 2024 Humbatt</Copyright>
+		<PackageReleaseNotes>Added support for .NET 9.0</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 

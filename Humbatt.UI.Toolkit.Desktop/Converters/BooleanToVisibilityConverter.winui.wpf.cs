@@ -13,8 +13,11 @@ using System;
 
 namespace Humbatt.UI.Toolkit.Desktop.Converters
 {
+
+#if WPF
 	[ValueConversion(typeof(bool), typeof(Visibility))]
-	public class BooleanToVisibilityConverter : BaseConverter, IValueConverter
+#endif
+    public class BooleanToVisibilityConverter : BaseConverter, IValueConverter
 	{
 		public BooleanToVisibilityConverter()
 		{
@@ -29,10 +32,10 @@ namespace Humbatt.UI.Toolkit.Desktop.Converters
 #endif
 		{
 			if (value == null)
-				return Visibility.Hidden;
+				return Visibility.Collapsed;
 
 			if (!(value is bool))
-				return Visibility.Hidden;
+				return Visibility.Collapsed;
 
 			var hide = Visibility.Collapsed;
 
@@ -41,7 +44,7 @@ namespace Humbatt.UI.Toolkit.Desktop.Converters
 				var pString = parameter.ToString();
 
 				if (pString.ToLower().Equals("hidden"))
-					hide = Visibility.Hidden;
+					hide = Visibility.Collapsed;
 			}
 
 			var bVal = (bool)value;

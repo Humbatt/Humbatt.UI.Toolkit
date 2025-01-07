@@ -18,6 +18,7 @@
     </Style>
 
     <Style TargetType="{x:Type local:SearchableListControl}">
+        <Setter Property="ButtonStyle" Value="{DynamicResource AccentButtonStyle}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:SearchableListControl}">
@@ -38,7 +39,7 @@
                                     <Button x:Name="PART_ClearButton">
                                         <ContentPresenter ContentSource="ClearButtonContent" />
                                     </Button>
-                                    <Button  x:Name="PART_ReloadButton" Command="{TemplateBinding ReloadCommand}">
+                                    <Button x:Name="PART_ReloadButton" Command="{TemplateBinding ReloadCommand}">
                                         <ContentPresenter ContentSource="ReloadButtonContent" />
                                     </Button>
                                     <Button x:Name="PART_AddButton" Command="{TemplateBinding AddCommand}">
@@ -46,7 +47,7 @@
                                     </Button>
 
                                 </StackPanel>
- 
+
                             </Border>
 
                             <DataGrid x:Name="PART_List" Grid.Row="1" ItemsSource="{TemplateBinding ItemsSource}" Background="{TemplateBinding Background}"
@@ -60,7 +61,6 @@
                                                CanUserResizeRows="False"
                                                CanUserSortColumns="False"
                                               RowHeight="24" />
-
 
                             <Border x:Name="PART_Footer" Grid.Row="2" Style="{StaticResource SearchableListControl.FooterBorderStyle}">
                                 <Grid>

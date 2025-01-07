@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-windows;net9.0-windows</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<Description>Mvmm based controls and classess for Humbatt.UI.Toolkit.Desktop for.NET 8+</Description>
+		<PackageTags>WPF Controls</PackageTags>
+		<PackageReleaseNotes>Added support for .NET 9.0</PackageReleaseNotes>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DSoft.System.Mvvm" Version="3.4.2406.251" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop\Humbatt.UI.Toolkit.Desktop.csproj" />
+	</ItemGroup>
+
+</Project>

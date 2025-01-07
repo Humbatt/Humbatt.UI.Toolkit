@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfSample"
-         d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
+        d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
         xmlns:controls="http://wpf.humbatt.com/winfx/xaml/controls"
         xmlns:editors="http://wpf.humbatt.com/winfx/xaml/editors"
         mc:Ignorable="d" Loaded="OnLoaded"
@@ -14,18 +14,20 @@
             <ColumnDefinition Width="400" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <controls:SearchableListControl ItemsSource="{Binding Items}" 
+        <controls:SearchableListControl Style="{DynamicResource Humbatt.Wpf.SearchableListControl.Style.MahApps}" ItemsSource="{Binding Items}" 
                                         SearchText="{Binding SearchText}" 
                                         DisplayMember="Name" 
                                         SelectedItem="{Binding SelectedItem}"
                                         ReloadCommand="{Binding RefreshCommand}" 
                                         DoubleClickCommand="{Binding DoubleClickCommand}"
                                         ShowAddButton="{Binding ShowAddButton}" />
-        <Grid  Grid.Column="1">
+        <StackPanel Grid.Column="1" Margin="10,0,10,0">
+            <TextBlock>Decimal Box</TextBlock>
             <editors:DecimalTextBox />
+            <TextBlock>ComboxBox</TextBlock>
             <editors:MultiComboBox Height="20"/>
             <controls:FluidProgressBar />
             <!--<controls:LoadingProgressView />-->
-        </Grid>
+        </StackPanel>
     </Grid>
 </Window>
