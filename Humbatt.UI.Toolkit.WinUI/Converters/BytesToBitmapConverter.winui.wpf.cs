@@ -17,7 +17,7 @@ using System.IO;
 
 
 
-namespace Humbatt.UI.Toolkit.Desktop.Converters
+namespace Humbatt.UI.Toolkit.WinUI.Converters
 {
 
 #if WPF
@@ -32,7 +32,7 @@ namespace Humbatt.UI.Toolkit.Desktop.Converters
 			get
 			{
 				if (_missingImage == null)
-					_missingImage = new BitmapImage(new Uri(@"/Humbatt.UI.Toolkit.Desktop;component/Resources/no-image-icon.png", UriKind.RelativeOrAbsolute));
+					_missingImage = new BitmapImage(new Uri(@"/Humbatt.UI.Toolkit.WinUI;component/Resources/no-image-icon.png", UriKind.RelativeOrAbsolute));
 
 				return _missingImage;
 			}

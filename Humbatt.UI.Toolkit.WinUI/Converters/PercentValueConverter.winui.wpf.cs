@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Humbatt.UI.Toolkit.Desktop.Converters
+namespace Humbatt.UI.Toolkit.WinUI.Converters
 {
 	public class PercentValueConverter : BaseConverter, IValueConverter
 	{
