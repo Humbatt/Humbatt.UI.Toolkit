@@ -16,7 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Humbatt.UI.Toolkit.Desktop
+namespace Humbatt.UI.Toolkit.WinUI.Behaviours
 {
 	public class DataGridSelectedItemsBlendBehavior : Behavior<DataGrid>
 	{

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Humbatt.UI.Toolkit.Desktop.Enums
+namespace Humbatt.UI.Toolkit.WinUI.Enums
 {
 	/// <summary>
 	/// Placement of the icon

@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-windows10.0.19041.0;net9.0-windows10.0.19041.0;</TargetFrameworks>
+		<RootNamespace>Humbatt.UI.Toolkit.WinUI</RootNamespace>
+		<Description>WinUI UI controls, extensions and helpers for .NET 8.0+</Description>
+		<PackageTags>WinUI</PackageTags>
+		<PackageReleaseNotes>Added support for .NET 9.0</PackageReleaseNotes>
+		<Configurations>Debug;Release</Configurations>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+		<UseWinUI>true</UseWinUI>
+		<DefineConstants>$(DefineConstants);WINUI</DefineConstants>
+		<WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240829007" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
+		<PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Humbatt.UI.Toolkit.Core\Humbatt.UI.Toolkit.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Editors\" />
+	  <Folder Include="Extensions\" />
+	</ItemGroup>
+
+
+</Project>

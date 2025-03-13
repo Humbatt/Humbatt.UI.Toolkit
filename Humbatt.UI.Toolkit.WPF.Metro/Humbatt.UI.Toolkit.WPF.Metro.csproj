@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-windows;net9.0-windows;</TargetFrameworks>
+		<TargetFrameworks>net8.0-windows;net9.0-windows;net8.0-windows10.0.18362;net9.0-windows10.0.18362;</TargetFrameworks>
 		<UseWPF>true</UseWPF>
 		<RootNamespace>Humbatt.UI.Toolkit.WPF</RootNamespace>
 		<Description>Metro styled, via MahApps, controls and classess for Humbatt.UI.Toolkit.WPF for .Net Core 3.x and Net 5+</Description>

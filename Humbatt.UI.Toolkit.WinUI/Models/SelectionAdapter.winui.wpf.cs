@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 
-namespace Humbatt.UI.Toolkit.Desktop.Models
+namespace Humbatt.UI.Toolkit.WinUI.Models
 {
 	public class SelectionAdapter
 	{

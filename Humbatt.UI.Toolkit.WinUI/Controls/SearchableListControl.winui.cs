@@ -15,7 +15,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace Humbatt.UI.Toolkit.Desktop.Controls
+namespace Humbatt.UI.Toolkit.WinUI.Controls
 {
 	public sealed class SearchableListControl : Control
 	{

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Humbatt.UI.Toolkit.Desktop.Models
+namespace Humbatt.UI.Toolkit.WinUI.Models
 {
 	/// <summary>
 	/// A generic suggestion provider. 

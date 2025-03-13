@@ -42,7 +42,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Humbatt.UI.Toolkit.Desktop\Humbatt.UI.Toolkit.Desktop.csproj" />
+    <ProjectReference Include="..\Humbatt.UI.Toolkit.WinUI\Humbatt.UI.Toolkit.WinUI.csproj" />
   </ItemGroup>
 
   <!--
