@@ -1,26 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFrameworks>net8.0-windows;net9.0-windows;net8.0-windows10.0.18362;net9.0-windows10.0.18362;</TargetFrameworks>
-		<UseWPF>true</UseWPF>
-		<RootNamespace>Humbatt.UI.Toolkit.WPF</RootNamespace>
-		<Description>Metro styled, via MahApps, controls and classess for Humbatt.UI.Toolkit.WPF for .Net Core 3.x and Net 5+</Description>
-		<PackageTags>WPF Controls</PackageTags>
-		<PackageReleaseNotes>Added support for .NET 9.0</PackageReleaseNotes>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net10.0-windows;net10.0-windows10.0.18362;</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>Humbatt.UI.Toolkit.WPF</RootNamespace>
+    <Description>Metro styled, via MahApps, controls and classess for Humbatt.UI.Toolkit.WPF for .Net Core 3.x and Net 5+</Description>
+    <PackageTags>WPF Controls</PackageTags>
+    <PackageReleaseNotes>Added support for .NET 10.0</PackageReleaseNotes>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<None Include="../README.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.11" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="6.2.1" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="MahApps.Metro" Version="2.4.10" />
-		<PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj" />
+  </ItemGroup>
 
 </Project>

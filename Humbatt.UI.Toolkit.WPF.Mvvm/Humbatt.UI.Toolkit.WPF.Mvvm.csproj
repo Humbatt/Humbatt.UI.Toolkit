@@ -1,24 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFrameworks>net8.0-windows;net9.0-windows;net8.0-windows10.0.18362;net9.0-windows10.0.18362;</TargetFrameworks>
-		<UseWPF>true</UseWPF>
-		<Description>Mvmm based controls and classess for Humbatt.UI.Toolkit.WPF for .Net Core 3.x and Net 5+</Description>
-		<PackageTags>WPF Controls</PackageTags>
-		<PackageReleaseNotes>Added support for .NET 9.0</PackageReleaseNotes>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net10.0-windows;net10.0-windows10.0.18362;</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <Description>Mvmm based controls and classess for Humbatt.UI.Toolkit.WPF for .Net Core 3.x and Net 5+</Description>
+    <PackageTags>WPF Controls</PackageTags>
+    <PackageReleaseNotes>Added support for .NET 10.0</PackageReleaseNotes>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<None Include="../README.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DSoft.System.Mvvm" Version="3.5.2511.161" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="DSoft.System.Mvvm" Version="3.4.2406.251" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Humbatt.UI.Toolkit.WPF\Humbatt.UI.Toolkit.WPF.csproj" />
+  </ItemGroup>
 
 </Project>
