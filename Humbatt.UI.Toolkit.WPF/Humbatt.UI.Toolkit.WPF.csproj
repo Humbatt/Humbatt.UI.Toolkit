@@ -1,32 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFrameworks>net8.0-windows;net9.0-windows;net8.0-windows10.0.18362;net9.0-windows10.0.18362;</TargetFrameworks>
-		<UseWPF>true</UseWPF>
-		<Description>WPF UI controls, extensions and helpers for .Net Core 3.x and Net 5+</Description>
-		<PackageTags>WPF Controls</PackageTags>
-		<PackageReleaseNotes>Added support for .NET 9.0</PackageReleaseNotes>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net10.0-windows;net10.0-windows10.0.18362;</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <Description>WPF UI controls, extensions and helpers for .Net Core 3.x and Net 5+</Description>
+    <PackageTags>WPF Controls</PackageTags>
+    <PackageReleaseNotes>Added support for .NET 10.0</PackageReleaseNotes>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<None Include="../README.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
-	</ItemGroup>
-	
-	<ItemGroup>
-		<None Remove="Resources\no-image-icon.png" />
-	</ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\no-image-icon.png" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Humbatt.UI.Toolkit.Core\Humbatt.UI.Toolkit.Core.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Humbatt.UI.Toolkit.Core\Humbatt.UI.Toolkit.Core.csproj" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<Resource Include="Resources\no-image-icon.png" />
-	</ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\no-image-icon.png" />
+  </ItemGroup>
 
 </Project>

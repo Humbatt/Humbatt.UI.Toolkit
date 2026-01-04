@@ -28,9 +28,11 @@
             <editors:MultiComboBox Height="20" Margin="10,5,10,5"/>
             <controls:FluidProgressBar />
             <controls:LoadingProgressView />
+            <Grid>
+                <Button Click="Button_Click">Try Option Items</Button>
+            </Grid>
         </StackPanel>
 
     </Grid>
 </Window>
 
-    

@@ -11,14 +11,19 @@
 		<LangVersion>Latest</LangVersion>
 		<Authors>humbatt newky2k</Authors>
 		<Company>humbatt newky2k</Company>
-		<Copyright>Copyright © 2025 Humbatt</Copyright>
+		<Copyright>Copyright © 2026 Humbatt</Copyright>
 		<NoWarn>1701;1702;CS8002;CS8653;CS8600;CS1591;CS8603;CS8602;CS8765;CS8618;CS8604;</NoWarn>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
 		<DebugSymbols>true</DebugSymbols>
 	</PropertyGroup>
 
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  
 	<PropertyGroup Condition=" '$(Configuration)'=='Release'">
 		<!-- sourcelink: Declare that the Repository URL can be published to NuSpec -->
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>

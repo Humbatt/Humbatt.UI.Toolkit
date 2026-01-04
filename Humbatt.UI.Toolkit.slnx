@@ -1,0 +1,35 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/.ci/">
+    <File Path=".editorconfig" />
+    <File Path="azure-pipelines-mergetest.yml" />
+    <File Path="azure-pipelines-release.yml" />
+    <File Path="Directory.Build.props" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Mobile/">
+    <Project Path="Humbatt.UI.Toolkit.Mobile/Humbatt.UI.Toolkit.Mobile.csproj" />
+  </Folder>
+  <Folder Name="/WinUI/">
+    <Project Path="Humbatt.UI.Toolkit.WinUI/Humbatt.UI.Toolkit.WinUI.csproj" />
+    <Project Path="WinUISample/WinUISample.csproj">
+      <Platform Solution="*|Any CPU" Project="x64" />
+      <Platform Solution="*|ARM64" Project="ARM64" />
+      <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="*|x86" Project="x86" />
+      <Deploy />
+    </Project>
+  </Folder>
+  <Folder Name="/WPF/">
+    <Project Path="Humbatt.UI.Toolkit.WPF.Metro/Humbatt.UI.Toolkit.WPF.Metro.csproj" />
+    <Project Path="Humbatt.UI.Toolkit.WPF.Mvvm/Humbatt.UI.Toolkit.WPF.Mvvm.csproj" />
+    <Project Path="Humbatt.UI.Toolkit.WPF/Humbatt.UI.Toolkit.WPF.csproj" />
+    <Project Path="HumbattUIKitSample/HumbattUIKitSample.csproj" />
+  </Folder>
+  <Project Path="Humbatt.UI.Toolkit.Core/Humbatt.UI.Toolkit.Core.csproj" />
+</Solution>
