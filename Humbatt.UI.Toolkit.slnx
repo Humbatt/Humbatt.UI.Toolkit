@@ -7,8 +7,6 @@
   </Configurations>
   <Folder Name="/.ci/">
     <File Path=".editorconfig" />
-    <File Path="azure-pipelines-mergetest.yml" />
-    <File Path="azure-pipelines-release.yml" />
     <File Path="Directory.Build.props" />
     <File Path="README.md" />
   </Folder>
