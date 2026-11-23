@@ -14,6 +14,7 @@
 		<Copyright>Copyright © 2026 Humbatt</Copyright>
 		<NoWarn>1701;1702;CS8002;CS8653;CS8600;CS1591;CS8603;CS8602;CS8765;CS8618;CS8604;</NoWarn>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>HumbattIcon.png</PackageIcon>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <None Include="../README.md" Pack="true" PackagePath="\" />
+    <None Include="../HumbattIcon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   
 	<PropertyGroup Condition=" '$(Configuration)'=='Release'">
@@ -34,10 +36,10 @@
 	</PropertyGroup>
 
 	<ItemGroup Condition=" '$(Configuration)'=='Release'">
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="11.0.100" PrivateAssets="All" />
 	</ItemGroup>
 
-	<PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+	<PropertyGroup Condition="'$(TF_BUILD)' == 'true' OR '$(GITHUB_ACTIONS)' == 'true'">
 		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
 

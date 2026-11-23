@@ -1,6 +1,6 @@
 # Humbatt.UI.Toolkit
 
-UI toolkit(controls and helper functions) for WPF and WinUI (Experimental).
+UI toolkit(controls and helper functions) for WPF, WinUI (Experimental) and MAUI. Works on .NET 10 and .NET 11.
 
 This toolkit includes
 
