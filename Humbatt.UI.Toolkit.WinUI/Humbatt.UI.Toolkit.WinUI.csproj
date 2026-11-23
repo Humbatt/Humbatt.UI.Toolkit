@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net10.0-windows10.0.19041.0;</TargetFrameworks>
+    <TargetFrameworks>net10.0-windows10.0.19041.0;net11.0-windows10.0.19041.0</TargetFrameworks>
     <RootNamespace>Humbatt.UI.Toolkit.WinUI</RootNamespace>
-    <Description>WinUI UI controls, extensions and helpers for .NET 8.0+</Description>
+    <Description>WinUI UI controls, extensions and helpers for .NET 10.0+</Description>
     <PackageTags>WinUI</PackageTags>
-    <PackageReleaseNotes>Added support for .NET 10.0</PackageReleaseNotes>
+    <PackageReleaseNotes>Added support for .NET 11.0</PackageReleaseNotes>
     <Configurations>Debug;Release</Configurations>
     <WinUISDKReferences>false</WinUISDKReferences>
   </PropertyGroup>
@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251106002" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.7.0" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7175" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="3.0.0" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.2" />
