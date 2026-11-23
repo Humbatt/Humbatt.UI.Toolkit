@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <Description>Common shared classes for Humbatt.UI.Toolkit</Description>
     <PackageTags>WPF Controls</PackageTags>
-    <PackageReleaseNotes>Added support for .NET 10.0 and Option Item support</PackageReleaseNotes>
+    <PackageReleaseNotes>Added support for .NET 11.0</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
